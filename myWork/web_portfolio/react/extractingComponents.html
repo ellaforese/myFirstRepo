@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello React!</title>
+    <!-- import React libraries -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>    
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+  </head>
+  <body>
+    <div id="root"></div>    
+    <script type="text/babel">   
+       
+  /* The Comment component consists of the author's avatar, name, comment, and date of comment  */
+  function Comment({name, avatarUrl, text, date}) {
+    return (    
+    <div>
+        <img
+          src={avatarUrl}
+          alt={name}
+        />
+        <div>
+          {name}
+        </div>
+      <div>
+        {text}
+      </div>
+      <div>
+        {date}
+    </div>
+    </div>
+    );
+  }
+
+  // JavaScript object to hold author information.
+  var authorObj = {name: "Robo",
+              avatarUrl:"https://gravatar.com/avatar/748506960d38cfe99fbe6819b55b916e?s=200&d=robohash&r=x"
+  }
+              
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<Comment name={authorObj.name} avatarUrl={authorObj.avatarUrl} text="beep bop boop" date={new Date().toLocaleTimeString()}/>);
+    </script>
+  </body>
+</html>

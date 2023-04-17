@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello React!</title>
+    <!-- import React libraries -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>    
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  </head>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      function makeOlder(age)
+        {
+          let older = Number(age) + 10;
+          return older; 
+        }
+
+      function Welcome({name, age})
+      {
+        return(
+          <div>
+            <h1>Hello, {name}. You are {age} years old. </h1>
+            <p> In 10 years you will be {makeOlder(age)} years old.</p>
+          </div>
+        );
+      }
+
+      function App(multipleGreetings){
+       
+          if(multipleGreetings){
+          return (
+          <div>
+          <Welcome name="John" age={17}/>
+          <Welcome name="Michelle" age={15}/>
+          <Welcome name="Patrick" age={13}/>
+          </div>
+          );
+          }
+          else{
+            return(
+            <Welcome name="Steve" age = {17}/>
+            );
+          }
+          
+      }
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+     // root.render(<Welcome name="React" age="12" />);
+      root.render(<App multipleGreetings={false}/>);
+        
+    </script>    
+  </body>
+</html>
